@@ -19,18 +19,21 @@ myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["location"]
 mycol = mydb["locationDistance"]
 
-for x in range(500000):
-    mydict = { 
-        "timestamp" : random_date("1/1/2019 1:30 PM", "5/10/2020 4:50 AM", random.random()),
-        "tag_id" : random.randint(1, 30),
-        "net_id" : random.randint(1, 6),
-        "zone_id" : random.randint(1, 3),
-        "distance" : random.randint(0, 300),
-        "anchor" : random.randint(0, 10),
-        "floor" : random.randint(1, 7),
-        "quality" : random.randint(1, 3)
-  
-      }
+for y in range(1000):
+    date = random_date("1/1/2019 1:30 PM", "5/10/2020 4:50 AM", random.random())
+
+    for x in range(500):
+        mydict = { 
+            "timestamp" : date,
+            "tag_id" : random.randint(1, 30),
+            "net_id" : random.randint(1, 6),
+            "zone_id" : random.randint(1, 3),
+            "distance" : random.randint(0, 300),
+            "anchor" : random.randint(0, 10),
+            "floor" : random.randint(1, 7),
+            "quality" : random.randint(1, 3)
+
+          }
 
 
-    x = mycol.insert_one(mydict)
+        x = mycol.insert_one(mydict)
