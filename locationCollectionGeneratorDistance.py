@@ -26,6 +26,8 @@ for x in range(500000):
         "net_id" : random.randint(1, 6),
         "zone_id" : random.randint(1, 3),
         "distance" : random.randint(0, 300),
+        "anchor" : random.randint(0, 10),
+        "floor" : random.randint(1, 7),
         "quality" : random.randint(1, 3)
   
       }
