@@ -1,0 +1,2215 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/3/2020 12:12:47 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-JBV9DCA"
+  DTS:CreatorName="DESKTOP-JBV9DCA\Rainers"
+  DTS:DTSID="{5E6F20C2-5E92-48BE-9BAF-73038E4DDC89}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="dataAnalysis"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{5FD49D5B-AAD7-4CC1-AEE5-D8B8A671F328}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C0AF4A83-3CB1-4F80-A205-4265311271BE}"
+      DTS:ObjectName="DESKTOP-JBV9DCA.VPP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-JBV9DCA;Initial Catalog=VPP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\05112020"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AF8EA3BA-9FB3-4ECC-BCED-4AD7FA9735EB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="05112020"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\05112020\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[s_apartments]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\05112020\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tag1_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="tag1_id"
+                      externalMetadataColumnId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag1_id]"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag1_id]" />
+                    <inputColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0x8102]"
+                      cachedDataType="i4"
+                      cachedName="avg_0x8102"
+                      externalMetadataColumnId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x8102]"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8102]" />
+                    <inputColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0xcb3b]"
+                      cachedDataType="i4"
+                      cachedName="avg_0xcb3b"
+                      externalMetadataColumnId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0xcb3b]"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xcb3b]" />
+                    <inputColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0x8b87]"
+                      cachedDataType="i4"
+                      cachedName="avg_0x8b87"
+                      externalMetadataColumnId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x8b87]"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8b87]" />
+                    <inputColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0x31c]"
+                      cachedDataType="i4"
+                      cachedName="avg_0x31c"
+                      externalMetadataColumnId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x31c]"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x31c]" />
+                    <inputColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[YYYY-MM-DD HH:MM]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="YYYY-MM-DD HH:MM"
+                      externalMetadataColumnId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag1_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag1_id" />
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x8102]"
+                      dataType="i4"
+                      name="avg_0x8102" />
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0xcb3b]"
+                      dataType="i4"
+                      name="avg_0xcb3b" />
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x8b87]"
+                      dataType="i4"
+                      name="avg_0x8b87" />
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x31c]"
+                      dataType="i4"
+                      name="avg_0x31c" />
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      name="YYYY-MM-DD HH:MM" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\05112020\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\05112020\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\05112020\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\05112020\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select a1.tag1_id , a1.avg_0x8102 , a2.avg_0xcb3b , a3.avg_0x8b87 , a4.avg_0x31c , a1.[YYYY-MM-DD HH:MM] from 
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_0x8102, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from t_apartments
+where tag2_id = '0x8102'
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a1
+left join 
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_0xcb3b, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from t_apartments
+where tag2_id = '0xcb3b' 
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a2 on a1.[YYYY-MM-DD HH:MM] = a2.[YYYY-MM-DD HH:MM] and a1.tag1_id = a2.tag1_id
+left join
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_0x8b87, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from t_apartments
+where tag2_id = '0x8b87' 
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a3 on a1.[YYYY-MM-DD HH:MM] = a3.[YYYY-MM-DD HH:MM] and a1.tag1_id = a3.tag1_id 
+left join
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_0x31c, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from t_apartments
+where tag2_id = '0x31c' 
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a4 on a1.[YYYY-MM-DD HH:MM] = a4.[YYYY-MM-DD HH:MM] and a1.tag1_id = a4.tag1_id</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\05112020\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag1_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag1_id]"
+                      length="50"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag1_id]"
+                      name="tag1_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8102]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x8102]"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8102]"
+                      name="avg_0x8102"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xcb3b]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0xcb3b]"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xcb3b]"
+                      name="avg_0xcb3b"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8b87]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x8b87]"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8b87]"
+                      name="avg_0x8b87"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x31c]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x31c]"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x31c]"
+                      name="avg_0x31c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]"
+                      name="YYYY-MM-DD HH:MM"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag1_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag1_id" />
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x8102]"
+                      dataType="i4"
+                      name="avg_0x8102" />
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0xcb3b]"
+                      dataType="i4"
+                      name="avg_0xcb3b" />
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x8b87]"
+                      dataType="i4"
+                      name="avg_0x8b87" />
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x31c]"
+                      dataType="i4"
+                      name="avg_0x31c" />
+                    <externalMetadataColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      name="YYYY-MM-DD HH:MM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag1_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag1_id]"
+                      name="tag1_id" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x8102]"
+                      dataType="i4"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x8102]"
+                      name="avg_0x8102" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0xcb3b]"
+                      dataType="i4"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0xcb3b]"
+                      name="avg_0xcb3b" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x8b87]"
+                      dataType="i4"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x8b87]"
+                      name="avg_0x8b87" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x31c]"
+                      dataType="i4"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x31c]"
+                      name="avg_0x31c" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YYYY-MM-DD HH:MM]"
+                      name="YYYY-MM-DD HH:MM" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\05112020.Paths[OLE DB Source Output]"
+              endId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AC9ADD35-D58B-4D70-A91B-FF0A719881C5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[z_apartments]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tag_id1]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="tag_id1"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id1]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id1]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_xcc00]"
+                      cachedDataType="numeric"
+                      cachedName="avg_xcc00"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_xcc00]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_xcc00]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_ycc00]"
+                      cachedDataType="numeric"
+                      cachedName="avg_ycc00"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_ycc00]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_ycc00]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_zcc00]"
+                      cachedDataType="numeric"
+                      cachedName="avg_zcc00"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_zcc00]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_zcc00]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tag_id2]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="tag_id2"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id2]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id2]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_xd68b]"
+                      cachedDataType="numeric"
+                      cachedName="avg_xd68b"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_xd68b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_xd68b]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_yd68b]"
+                      cachedDataType="numeric"
+                      cachedName="avg_yd68b"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_yd68b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_yd68b]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_zd68b]"
+                      cachedDataType="numeric"
+                      cachedName="avg_zd68b"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_zd68b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_zd68b]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tag_id3]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="tag_id3"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id3]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id3]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_xdcaa]"
+                      cachedDataType="numeric"
+                      cachedName="avg_xdcaa"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_xdcaa]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_xdcaa]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_ydcaa]"
+                      cachedDataType="numeric"
+                      cachedName="avg_ydcaa"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_ydcaa]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_ydcaa]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_zdcaa]"
+                      cachedDataType="numeric"
+                      cachedName="avg_zdcaa"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_zdcaa]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_zdcaa]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tag_id4]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="tag_id4"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id4]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id4]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_x53b8]"
+                      cachedDataType="numeric"
+                      cachedName="avg_x53b8"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_x53b8]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_x53b8]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_y53b8]"
+                      cachedDataType="numeric"
+                      cachedName="avg_y53b8"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_y53b8]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_y53b8]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_z53b8]"
+                      cachedDataType="numeric"
+                      cachedName="avg_z53b8"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_z53b8]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_z53b8]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tag_id5]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="tag_id5"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id5]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id5]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_x489b]"
+                      cachedDataType="numeric"
+                      cachedName="avg_x489b"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_x489b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_x489b]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_y489b]"
+                      cachedDataType="numeric"
+                      cachedName="avg_y489b"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_y489b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_y489b]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_z489b]"
+                      cachedDataType="numeric"
+                      cachedName="avg_z489b"
+                      cachedPrecision="38"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_z489b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_z489b]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[YYYY-MM-DD HH:MM]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="YYYY-MM-DD HH:MM"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id1]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag_id1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_xcc00]"
+                      dataType="numeric"
+                      name="avg_xcc00"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_ycc00]"
+                      dataType="numeric"
+                      name="avg_ycc00"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_zcc00]"
+                      dataType="numeric"
+                      name="avg_zcc00"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id2]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag_id2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_xd68b]"
+                      dataType="numeric"
+                      name="avg_xd68b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_yd68b]"
+                      dataType="numeric"
+                      name="avg_yd68b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_zd68b]"
+                      dataType="numeric"
+                      name="avg_zd68b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id3]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag_id3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_xdcaa]"
+                      dataType="numeric"
+                      name="avg_xdcaa"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_ydcaa]"
+                      dataType="numeric"
+                      name="avg_ydcaa"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_zdcaa]"
+                      dataType="numeric"
+                      name="avg_zdcaa"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id4]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag_id4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_x53b8]"
+                      dataType="numeric"
+                      name="avg_x53b8"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_y53b8]"
+                      dataType="numeric"
+                      name="avg_y53b8"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_z53b8]"
+                      dataType="numeric"
+                      name="avg_z53b8"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id5]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag_id5" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_x489b]"
+                      dataType="numeric"
+                      name="avg_x489b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_y489b]"
+                      dataType="numeric"
+                      name="avg_y489b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_z489b]"
+                      dataType="numeric"
+                      name="avg_z489b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      name="YYYY-MM-DD HH:MM" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select a1.tag_id as tag_id1   , a1.avg_x as avg_xcc00 , a1.avg_y as avg_ycc00 ,a1.avg_z as avg_zcc00, 
+a2.tag_id as tag_id2 , a2.avg_x as avg_xd68b , a2.avg_y as avg_yd68b , a2.avg_z as avg_zd68b , 
+a3.tag_id as tag_id3 , a3.avg_x as avg_xdcaa , a3.avg_y as avg_ydcaa  , a3.avg_z as avg_zdcaa , 
+a4.tag_id as tag_id4 , a4.avg_x as avg_x53b8 , a4.avg_y as avg_y53b8 , a4.avg_z as avg_z53b8, 
+a5.tag_id as tag_id5 , a5.avg_x as avg_x489b , a5.avg_y as avg_y489b  , a5.avg_z as avg_z489b , a6.[YYYY-MM-DD HH:MM]
+from (
+select distinct CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from t_apartments_locat) a6
+left join
+(select tag_id ,  Avg(cast (x as decimal(9,8)))  AS avg_x, Avg(cast( y as decimal(9,8)))  AS avg_y , Avg(cast (z as decimal(9,8)))  AS avg_z, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from t_apartments_locat
+where tag_id = 'cc00'
+group by tag_id , CONVERT(SMALLDATETIME, time, 20)) a1 on a6.[YYYY-MM-DD HH:MM]=a1.[YYYY-MM-DD HH:MM]
+left join(
+select tag_id ,  Avg(cast (x as decimal(9,8)))  AS avg_x, Avg(cast( y as decimal(9,8)))  AS avg_y , Avg(cast (z as decimal(9,8)))  AS avg_z, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from t_apartments_locat
+where tag_id = 'd68b'
+group by tag_id , CONVERT(SMALLDATETIME, time, 20)) a2 on a6.[YYYY-MM-DD HH:MM]=a2.[YYYY-MM-DD HH:MM]
+left join (
+select tag_id ,  Avg(cast (x as decimal(9,8)))  AS avg_x, Avg(cast( y as decimal(9,8)))  AS avg_y , Avg(cast (z as decimal(9,8)))  AS avg_z, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from t_apartments_locat
+where tag_id = 'dcaa'
+group by tag_id , CONVERT(SMALLDATETIME, time, 20)) a3 on a6.[YYYY-MM-DD HH:MM]=a3.[YYYY-MM-DD HH:MM]
+left join (
+select tag_id ,  Avg(cast (x as decimal(9,8)))  AS avg_x, Avg(cast( y as decimal(9,8)))  AS avg_y , Avg(cast (z as decimal(9,8)))  AS avg_z, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from t_apartments_locat
+where tag_id = '53b8'
+group by tag_id , CONVERT(SMALLDATETIME, time, 20)) a4 on a6.[YYYY-MM-DD HH:MM]=a4.[YYYY-MM-DD HH:MM]
+left join (
+select tag_id ,  Avg(cast (x as decimal(9,8)))  AS avg_x, Avg(cast( y as decimal(9,8)))  AS avg_y , Avg(cast (z as decimal(9,8)))  AS avg_z, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from t_apartments_locat
+where tag_id = '489b'
+group by tag_id , CONVERT(SMALLDATETIME, time, 20)) a5 on a6.[YYYY-MM-DD HH:MM]=a5.[YYYY-MM-DD HH:MM]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag_id1]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id1]"
+                      name="tag_id1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_xcc00]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_xcc00]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_xcc00]"
+                      name="avg_xcc00"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_ycc00]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_ycc00]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_ycc00]"
+                      name="avg_ycc00"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_zcc00]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_zcc00]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_zcc00]"
+                      name="avg_zcc00"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag_id2]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id2]"
+                      name="tag_id2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_xd68b]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_xd68b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_xd68b]"
+                      name="avg_xd68b"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_yd68b]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_yd68b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_yd68b]"
+                      name="avg_yd68b"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_zd68b]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_zd68b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_zd68b]"
+                      name="avg_zd68b"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id3]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag_id3]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id3]"
+                      name="tag_id3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_xdcaa]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_xdcaa]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_xdcaa]"
+                      name="avg_xdcaa"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_ydcaa]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_ydcaa]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_ydcaa]"
+                      name="avg_ydcaa"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_zdcaa]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_zdcaa]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_zdcaa]"
+                      name="avg_zdcaa"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id4]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag_id4]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id4]"
+                      name="tag_id4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_x53b8]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_x53b8]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_x53b8]"
+                      name="avg_x53b8"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_y53b8]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_y53b8]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_y53b8]"
+                      name="avg_y53b8"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_z53b8]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_z53b8]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_z53b8]"
+                      name="avg_z53b8"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id5]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag_id5]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag_id5]"
+                      name="tag_id5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_x489b]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_x489b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_x489b]"
+                      name="avg_x489b"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_y489b]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_y489b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_y489b]"
+                      name="avg_y489b"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_z489b]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_z489b]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_z489b]"
+                      name="avg_z489b"
+                      precision="38"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]"
+                      name="YYYY-MM-DD HH:MM"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag_id1]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag_id1" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_xcc00]"
+                      dataType="numeric"
+                      name="avg_xcc00"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_ycc00]"
+                      dataType="numeric"
+                      name="avg_ycc00"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_zcc00]"
+                      dataType="numeric"
+                      name="avg_zcc00"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag_id2]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag_id2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_xd68b]"
+                      dataType="numeric"
+                      name="avg_xd68b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_yd68b]"
+                      dataType="numeric"
+                      name="avg_yd68b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_zd68b]"
+                      dataType="numeric"
+                      name="avg_zd68b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag_id3]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag_id3" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_xdcaa]"
+                      dataType="numeric"
+                      name="avg_xdcaa"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_ydcaa]"
+                      dataType="numeric"
+                      name="avg_ydcaa"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_zdcaa]"
+                      dataType="numeric"
+                      name="avg_zdcaa"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag_id4]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag_id4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_x53b8]"
+                      dataType="numeric"
+                      name="avg_x53b8"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_y53b8]"
+                      dataType="numeric"
+                      name="avg_y53b8"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_z53b8]"
+                      dataType="numeric"
+                      name="avg_z53b8"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag_id5]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag_id5" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_x489b]"
+                      dataType="numeric"
+                      name="avg_x489b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_y489b]"
+                      dataType="numeric"
+                      name="avg_y489b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_z489b]"
+                      dataType="numeric"
+                      name="avg_z489b"
+                      precision="38"
+                      scale="8" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      name="YYYY-MM-DD HH:MM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag_id1]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag_id1]"
+                      name="tag_id1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_xcc00]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_xcc00]"
+                      name="avg_xcc00"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_ycc00]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_ycc00]"
+                      name="avg_ycc00"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_zcc00]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_zcc00]"
+                      name="avg_zcc00"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag_id2]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag_id2]"
+                      name="tag_id2" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_xd68b]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_xd68b]"
+                      name="avg_xd68b"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_yd68b]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_yd68b]"
+                      name="avg_yd68b"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_zd68b]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_zd68b]"
+                      name="avg_zd68b"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag_id3]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag_id3]"
+                      name="tag_id3" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_xdcaa]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_xdcaa]"
+                      name="avg_xdcaa"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_ydcaa]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_ydcaa]"
+                      name="avg_ydcaa"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_zdcaa]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_zdcaa]"
+                      name="avg_zdcaa"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag_id4]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag_id4]"
+                      name="tag_id4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_x53b8]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_x53b8]"
+                      name="avg_x53b8"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_y53b8]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_y53b8]"
+                      name="avg_y53b8"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_z53b8]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_z53b8]"
+                      name="avg_z53b8"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag_id5]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag_id5]"
+                      name="tag_id5" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_x489b]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_x489b]"
+                      name="avg_x489b"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_y489b]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_y489b]"
+                      name="avg_y489b"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_z489b]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_z489b]"
+                      name="avg_z489b"
+                      precision="38"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YYYY-MM-DD HH:MM]"
+                      name="YYYY-MM-DD HH:MM" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\everyMinute"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{83AE2B90-8ECD-4F5E-AD29-02C8B5F6B583}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="everyMinute"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\everyMinute\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[two_rooms_together]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\everyMinute\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[a1t]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="a1t"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a1t]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a1t]" />
+                    <inputColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[a1avg]"
+                      cachedDataType="i4"
+                      cachedName="a1avg"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a1avg]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a1avg]" />
+                    <inputColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[a2t]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="a2t"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a2t]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a2t]" />
+                    <inputColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[a2avg]"
+                      cachedDataType="i4"
+                      cachedName="a2avg"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a2avg]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a2avg]" />
+                    <inputColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[a3t]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="a3t"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a3t]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a3t]" />
+                    <inputColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[a3avg]"
+                      cachedDataType="i4"
+                      cachedName="a3avg"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a3avg]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a3avg]" />
+                    <inputColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[a4t]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="a4t"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a4t]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a4t]" />
+                    <inputColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[a4avg]"
+                      cachedDataType="i4"
+                      cachedName="a4avg"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a4avg]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a4avg]" />
+                    <inputColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[YYYY-MM-DD HH:MM]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="YYYY-MM-DD HH:MM"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a1t]"
+                      dataType="wstr"
+                      length="50"
+                      name="a1t" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a1avg]"
+                      dataType="i4"
+                      name="a1avg" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a2t]"
+                      dataType="wstr"
+                      length="50"
+                      name="a2t" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a2avg]"
+                      dataType="i4"
+                      name="a2avg" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a3t]"
+                      dataType="wstr"
+                      length="50"
+                      name="a3t" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a3avg]"
+                      dataType="i4"
+                      name="a3avg" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a4t]"
+                      dataType="wstr"
+                      length="50"
+                      name="a4t" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[a4avg]"
+                      dataType="i4"
+                      name="a4avg" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      name="YYYY-MM-DD HH:MM" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\everyMinute\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\everyMinute\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\everyMinute\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\everyMinute\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[t_distances]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT a1.tag1_id as a1t , a1.avg as a1avg , a2.tag1_id as a2t, a2.avg as a2avg , a3.tag1_id as a3t , a3.avg as a3avg , a4.tag1_id as a4t , a4.avg as a4avg, a4.[YYYY-MM-DD HH:MM]
+FROM   (SELECT tag1_id, 
+               Avg(CONVERT (INT, distance))     AS avg, 
+               CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+        FROM   [VPP].[dbo].[t_distances] 
+        WHERE  test_name = 'Two_rooms_together_1' 
+               AND tag2_id = '0x920A' 
+               AND tag1_id = 'cb06' 
+        GROUP  BY tag1_id, 
+                  CONVERT(SMALLDATETIME, time, 20)) a1 
+       LEFT JOIN (SELECT tag1_id, 
+                         Avg(CONVERT (INT, distance))     AS avg, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   [VPP].[dbo].[t_distances] 
+                  WHERE  test_name = 'Two_rooms_together_1' 
+                         AND tag2_id = '0x920A' 
+                         AND tag1_id = 'cc00' 
+                  GROUP  BY tag1_id, 
+                            CONVERT(SMALLDATETIME, time, 20))a2 
+              ON a1.[yyyy-mm-dd hh:mm] = a2.[yyyy-mm-dd hh:mm] 
+       LEFT JOIN (SELECT tag1_id, 
+                         Avg(CONVERT (INT, distance))     AS avg, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   [VPP].[dbo].[t_distances] 
+                  WHERE  test_name = 'Two_rooms_together_1' 
+                         AND tag2_id = '0x920A' 
+                         AND tag1_id = 'ce1e' 
+                  GROUP  BY tag1_id, 
+                            CONVERT(SMALLDATETIME, time, 20)) a3 
+              ON a3.[yyyy-mm-dd hh:mm] = a1.[yyyy-mm-dd hh:mm] 
+       LEFT JOIN (SELECT tag1_id, 
+                         Avg(CONVERT (INT, distance))     AS avg, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   [VPP].[dbo].[t_distances] 
+                  WHERE  test_name = 'Two_rooms_together_1' 
+                         AND tag2_id = '0x920A' 
+                         AND tag1_id = 'd68b' 
+                  GROUP  BY tag1_id, 
+                            CONVERT(SMALLDATETIME, time, 20)) a4 
+              ON a4.[yyyy-mm-dd hh:mm] = a1.[yyyy-mm-dd hh:mm]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\everyMinute\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a1t]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a1t]"
+                      length="50"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a1t]"
+                      name="a1t"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a1avg]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a1avg]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a1avg]"
+                      name="a1avg"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a2t]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a2t]"
+                      length="50"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a2t]"
+                      name="a2t"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a2avg]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a2avg]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a2avg]"
+                      name="a2avg"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a3t]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a3t]"
+                      length="50"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a3t]"
+                      name="a3t"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a3avg]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a3avg]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a3avg]"
+                      name="a3avg"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a4t]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a4t]"
+                      length="50"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a4t]"
+                      name="a4t"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a4avg]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a4avg]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[a4avg]"
+                      name="a4avg"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]"
+                      name="YYYY-MM-DD HH:MM"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a1t]"
+                      dataType="wstr"
+                      length="50"
+                      name="a1t" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a1avg]"
+                      dataType="i4"
+                      name="a1avg" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a2t]"
+                      dataType="wstr"
+                      length="50"
+                      name="a2t" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a2avg]"
+                      dataType="i4"
+                      name="a2avg" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a3t]"
+                      dataType="wstr"
+                      length="50"
+                      name="a3t" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a3avg]"
+                      dataType="i4"
+                      name="a3avg" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a4t]"
+                      dataType="wstr"
+                      length="50"
+                      name="a4t" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[a4avg]"
+                      dataType="i4"
+                      name="a4avg" />
+                    <externalMetadataColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      name="YYYY-MM-DD HH:MM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a1t]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a1t]"
+                      name="a1t" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a1avg]"
+                      dataType="i4"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a1avg]"
+                      name="a1avg" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a2t]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a2t]"
+                      name="a2t" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a2avg]"
+                      dataType="i4"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a2avg]"
+                      name="a2avg" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a3t]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a3t]"
+                      name="a3t" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a3avg]"
+                      dataType="i4"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a3avg]"
+                      name="a3avg" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a4t]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a4t]"
+                      name="a4t" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a4avg]"
+                      dataType="i4"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[a4avg]"
+                      name="a4avg" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YYYY-MM-DD HH:MM]"
+                      name="YYYY-MM-DD HH:MM" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\everyMinute.Paths[OLE DB Source Output]"
+              endId="Package\everyMinute\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\everyMinute\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="136,42"
+          Id="Package\everyMinute"
+          TopLeft="28,66" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\05112020"
+          TopLeft="269,73" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="619,150" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\everyMinute">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\everyMinute\OLE DB Source"
+          TopLeft="204,160" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\everyMinute\OLE DB Destination"
+          TopLeft="458,280" />
+        <EdgeLayout
+          Id="Package\everyMinute.Paths[OLE DB Source Output]"
+          TopLeft="279,202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="264.5,78"
+              Start="0,0"
+              End="264.5,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35"
+                    Point2="0,39"
+                    Point3="4,39" />
+                  <mssgle:LineSegment
+                    End="260.5,39" />
+                  <mssgle:CubicBezierSegment
+                    Point1="260.5,39"
+                    Point2="264.5,39"
+                    Point3="264.5,43" />
+                  <mssgle:LineSegment
+                    End="264.5,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\everyMinute\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\everyMinute\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\05112020">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\05112020\OLE DB Source"
+          TopLeft="129,81" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\05112020\OLE DB Destination"
+          TopLeft="417,176" />
+        <EdgeLayout
+          Id="Package\05112020.Paths[OLE DB Source Output]"
+          TopLeft="204,123">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="298.5,53"
+              Start="0,0"
+              End="298.5,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.5"
+                    Point2="0,26.5"
+                    Point3="4,26.5" />
+                  <mssgle:LineSegment
+                    End="294.5,26.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="294.5,26.5"
+                    Point2="298.5,26.5"
+                    Point3="298.5,30.5" />
+                  <mssgle:LineSegment
+                    End="298.5,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\05112020\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\05112020\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="155,108" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="579,140" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="305,129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="274,32"
+              Start="0,0"
+              End="266.5,32">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="133,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="133,0"
+                    Point2="137,0"
+                    Point3="137,4" />
+                  <mssgle:LineSegment
+                    End="137,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137,28"
+                    Point2="137,32"
+                    Point3="141,32" />
+                  <mssgle:LineSegment
+                    End="266.5,32" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
