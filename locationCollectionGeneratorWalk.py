@@ -17,11 +17,6 @@ def random_date(start, end, prop):
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["location"]
-mycol = mydb["location"]
-
-
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient["location"]
 mycol = mydb["locationWalk"]
 
 for y in range(10000):

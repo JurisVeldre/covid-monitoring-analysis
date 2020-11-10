@@ -1,0 +1,1117 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/2/2020 3:33:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-JBV9DCA"
+  DTS:CreatorName="DESKTOP-JBV9DCA\Rainers"
+  DTS:DTSID="{4FEF157C-A5EF-4E9A-9642-C8239B9E096A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.128"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="csvToSql"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{09093726-D18B-4AAC-96A3-8D42FC197EB2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BC1F33C6-8FA8-40B5-BEBC-FDD1FD4D4687}"
+      DTS:ObjectName="DESKTOP-JBV9DCA.VPP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-JBV9DCA;Initial Catalog=VPP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3F501479-B843-47B3-AEAE-9F58D412E5C5}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Rainers\Desktop\vpp_locat_apartment.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="_id"
+              DTS:DTSID="{D563B86C-D91A-4929-BDC6-3A8D84C106B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tag1_id"
+              DTS:DTSID="{5F0E9F6F-5290-4B2A-B67F-3AF1787B7A23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tag2_id"
+              DTS:DTSID="{A3F6584E-A2E5-4162-98F2-85DE2D256D61}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="distance"
+              DTS:DTSID="{C845FEC2-492C-4F8D-AB8F-5B5C2728D77F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="time"
+              DTS:DTSID="{EF939CCB-D22C-4BD5-91DA-127C53528231}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="test_name"
+              DTS:DTSID="{B32B3BF8-F78A-4E33-8F64-88F2BF3A546A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="counter"
+              DTS:DTSID="{CD80B16A-F57B-46B8-8BD9-2DFAF66BD177}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{54E87EBB-6390-4323-8C52-6D31A20C54FE}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Rainers\Desktop\vpp_locat_apartment.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="_id"
+              DTS:DTSID="{0354FC11-DB99-4E7C-81FF-263D8A6BBF78}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tag_id"
+              DTS:DTSID="{83C8DFC2-296B-4C27-A09A-A7B8BFDA66EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="x_coordinate"
+              DTS:DTSID="{21C52AEC-7060-4C44-8DD2-B9C487EB55DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="y_coordinate"
+              DTS:DTSID="{01E46406-E58C-408E-B6B7-FF368D7A332B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="z_coordinate"
+              DTS:DTSID="{0C60C6C2-B215-4841-B761-F43B3112528A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="quality_factor"
+              DTS:DTSID="{29584347-AA19-4104-A2DE-A873E71C5E1E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="correlation_nr"
+              DTS:DTSID="{941875B6-0C60-466D-AA23-352594BE94B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="time"
+              DTS:DTSID="{B9E48E95-EFFF-4FF6-8332-DE1E3E5389C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{D70C3289-9BA4-4192-8C68-EC7974E9B009}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Csv faila ielāde"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{52DC95A3-EE96-4DBB-8185-61171441369C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Csv faila ielāde"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Csv faila ielāde\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[tag_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="tag_id"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[tag_id]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[x_coordinate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="x_coordinate"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[x_coordinate]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[y_coordinate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="y_coordinate"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[y_coordinate]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[z_coordinate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="z_coordinate"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[z_coordinate]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[quality_factor]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="quality_factor"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[quality_factor]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[time]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="time"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[time]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="name"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[tag_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[tag_id]"
+                      name="tag_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[tag_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[x]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[x]"
+                      name="x"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[x_coordinate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[y]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[y]"
+                      name="y"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[y_coordinate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[z]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[z]"
+                      name="z"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[z_coordinate]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[quality_factor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[quality_factor]"
+                      name="quality_factor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[quality_factor]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[time]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[time]"
+                      name="time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[time]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[test_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[test_name]"
+                      name="test_name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Csv faila ielāde\Flat File Source 1"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Flat File Source 1"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Csv faila ielāde\Flat File Source 1.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[_id]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[_id]"
+                      name="_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[tag_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[tag_id]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[tag_id]"
+                      name="tag_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[x_coordinate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[x_coordinate]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[x_coordinate]"
+                      name="x_coordinate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[y_coordinate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[y_coordinate]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[y_coordinate]"
+                      name="y_coordinate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[z_coordinate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[z_coordinate]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[z_coordinate]"
+                      name="z_coordinate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[quality_factor]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[quality_factor]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[quality_factor]"
+                      name="quality_factor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[correlation_nr]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[correlation_nr]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[correlation_nr]"
+                      name="correlation_nr"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[time]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[time]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[time]"
+                      name="time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="_id" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[tag_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="tag_id" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[x_coordinate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="x_coordinate" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[y_coordinate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="y_coordinate" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[z_coordinate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="z_coordinate" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[quality_factor]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="quality_factor" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[correlation_nr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="correlation_nr" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="time" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Csv faila ielāde\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[t_apartments_locat]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Csv faila ielāde\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[x]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="x"
+                      externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[x]"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[x]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[y]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="y"
+                      externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[y]"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[y]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[z]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="z"
+                      externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[z]"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[z]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[test_name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="test_name"
+                      externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[test_name]"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[test_name]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tag_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="tag_id"
+                      externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id]"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[tag_id]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[quality_factor]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="quality_factor"
+                      externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quality_factor]"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[quality_factor]" />
+                    <inputColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[time]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="time"
+                      externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[time]"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[time]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag_id" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[x]"
+                      dataType="wstr"
+                      length="50"
+                      name="x" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[y]"
+                      dataType="wstr"
+                      length="50"
+                      name="y" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[z]"
+                      dataType="wstr"
+                      length="50"
+                      name="z" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quality_factor]"
+                      dataType="wstr"
+                      length="50"
+                      name="quality_factor" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[time]"
+                      dataType="dbTimeStamp"
+                      name="time" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[test_name]"
+                      dataType="wstr"
+                      length="50"
+                      name="test_name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Csv faila ielāde\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Csv faila ielāde\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Csv faila ielāde\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Csv faila ielāde.Paths[Data Conversion Output]"
+              endId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Csv faila ielāde.Paths[Flat File Source Output]"
+              endId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Csv faila ielāde\Flat File Source 1.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Csv faila ielāde"
+          TopLeft="112,104" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Csv faila ielāde">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Csv faila ielāde\Flat File Source 1"
+          TopLeft="159,47" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Csv faila ielāde\Data Conversion"
+          TopLeft="458,202" />
+        <EdgeLayout
+          Id="Package\Csv faila ielāde.Paths[Flat File Source Output]"
+          TopLeft="239,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="297,113"
+              Start="0,0"
+              End="297,105.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,52.5"
+                    Point2="0,56.5"
+                    Point3="4,56.5" />
+                  <mssgle:LineSegment
+                    End="293,56.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="293,56.5"
+                    Point2="297,56.5"
+                    Point3="297,60.5" />
+                  <mssgle:LineSegment
+                    End="297,105.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Csv faila ielāde\OLE DB Destination"
+          TopLeft="768,307" />
+        <EdgeLayout
+          Id="Package\Csv faila ielāde.Paths[Data Conversion Output]"
+          TopLeft="536,244">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="317.5,63"
+              Start="0,0"
+              End="317.5,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="4,31.5" />
+                  <mssgle:LineSegment
+                    End="313.5,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="313.5,31.5"
+                    Point2="317.5,31.5"
+                    Point3="317.5,35.5" />
+                  <mssgle:LineSegment
+                    End="317.5,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Csv faila ielāde\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
