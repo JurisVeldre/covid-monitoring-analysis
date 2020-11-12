@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>VPP 6.1</Name>
-    <LastWriteTime>2020-11-05T22:57:15.9113617Z</LastWriteTime>
+    <LastWriteTime>2020-11-12T17:00:47.8662051Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,12 +13,17 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>dataAnalysis.dtsx</Name>
-      <LastWriteTime>2020-11-06T13:25:51.5679182Z</LastWriteTime>
+      <LastWriteTime>2020-11-12T18:52:17.6297972Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>csvToSql 1.dtsx</Name>
       <LastWriteTime>2020-11-05T23:17:55.9838982Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>csvToSql 2.dtsx</Name>
+      <LastWriteTime>2020-11-12T17:00:47.8213735Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

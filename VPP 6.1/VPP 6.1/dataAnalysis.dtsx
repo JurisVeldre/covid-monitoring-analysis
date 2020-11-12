@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="dataAnalysis"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{66AE445C-D551-43E8-913D-288E2968C442}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{88946BEA-8578-4AC0-B34B-7F51709A03AA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -429,6 +429,649 @@ group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a4 on a1.[YYYY-MM
               endId="Package\05112020\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\05112020\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\apartmentDistanceLocation"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6AEBEBBF-1664-47FD-94D2-34C54365F4E2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="apartmentDistanceLocation"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\apartmentDistanceLocation\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[locationDistanceMeasurements]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\apartmentDistanceLocation\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tag1_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="tag1_id"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag1_id]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag1_id]" />
+                    <inputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0x31c]"
+                      cachedDataType="i4"
+                      cachedName="avg_0x31c"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x31c]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x31c]" />
+                    <inputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0xcb3b]"
+                      cachedDataType="i4"
+                      cachedName="avg_0xcb3b"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0xcb3b]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xcb3b]" />
+                    <inputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0x8b87]"
+                      cachedDataType="i4"
+                      cachedName="avg_0x8b87"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x8b87]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8b87]" />
+                    <inputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0x8b95]"
+                      cachedDataType="i4"
+                      cachedName="avg_0x8b95"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x8b95]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8b95]" />
+                    <inputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0x920a]"
+                      cachedDataType="i4"
+                      cachedName="avg_0x920a"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x920a]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x920a]" />
+                    <inputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0x921f]"
+                      cachedDataType="i4"
+                      cachedName="avg_0x921f"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x921f]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x921f]" />
+                    <inputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0xcb06]"
+                      cachedDataType="i4"
+                      cachedName="avg_0xcb06"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0xcb06]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xcb06]" />
+                    <inputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0xce1e]"
+                      cachedDataType="i4"
+                      cachedName="avg_0xce1e"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0xce1e]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xce1e]" />
+                    <inputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_0x5595]"
+                      cachedDataType="i4"
+                      cachedName="avg_0x5595"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x5595]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x5595]" />
+                    <inputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[yyyy-mm-dd hh:mm]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="yyyy-mm-dd hh:mm"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[yyyy-mm-dd hh:mm]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[yyyy-mm-dd hh:mm]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag1_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag1_id" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x31c]"
+                      dataType="i4"
+                      name="avg_0x31c" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0xcb3b]"
+                      dataType="i4"
+                      name="avg_0xcb3b" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x8b87]"
+                      dataType="i4"
+                      name="avg_0x8b87" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x8b95]"
+                      dataType="i4"
+                      name="avg_0x8b95" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x920a]"
+                      dataType="i4"
+                      name="avg_0x920a" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x921f]"
+                      dataType="i4"
+                      name="avg_0x921f" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0xcb06]"
+                      dataType="i4"
+                      name="avg_0xcb06" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0xce1e]"
+                      dataType="i4"
+                      name="avg_0xce1e" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_0x5595]"
+                      dataType="i4"
+                      name="avg_0x5595" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[yyyy-mm-dd hh:mm]"
+                      dataType="dbTimeStamp"
+                      name="yyyy-mm-dd hh:mm" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\apartmentDistanceLocation\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\apartmentDistanceLocation\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT a0.tag1_id, 
+       a1.avg_0x31c, 
+       a2.avg_0xcb3b, 
+       a3.avg_0x8b87, 
+       a5.avg_0x8b95, 
+       a7.avg_0x920a, 
+       a8.avg_0x921f, 
+       a9.avg_0xcb06, 
+       a10.avg_0xce1e, 
+       a11.avg_0x5595, 
+       a0.[yyyy-mm-dd hh:mm] 
+FROM   (SELECT tag1_id, 
+               CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+        FROM   z_test_apartment 
+        GROUP  BY tag1_id, 
+                  CONVERT(SMALLDATETIME, time, 20)) a0 
+       LEFT JOIN (SELECT tag1_id, 
+                         tag2_id, 
+                         Avg(CONVERT (INT, distance))     AS avg_0x31c, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   z_test_apartment 
+                  WHERE  tag2_id = '0x31c' 
+                  GROUP  BY tag1_id, 
+                            tag2_id, 
+                            CONVERT(SMALLDATETIME, time, 20)) a1 
+              ON a1.[yyyy-mm-dd hh:mm] = a0.[yyyy-mm-dd hh:mm] 
+                 AND a0.tag1_id = a1.tag1_id 
+       LEFT JOIN (SELECT tag1_id, 
+                         tag2_id, 
+                         Avg(CONVERT (INT, distance))     AS avg_0xcb3b, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   z_test_apartment 
+                  WHERE  tag2_id = '0xcb3b' 
+                  GROUP  BY tag1_id, 
+                            tag2_id, 
+                            CONVERT(SMALLDATETIME, time, 20)) a2 
+              ON a0.[yyyy-mm-dd hh:mm] = a2.[yyyy-mm-dd hh:mm] 
+                 AND a0.tag1_id = a2.tag1_id 
+       LEFT JOIN (SELECT tag1_id, 
+                         tag2_id, 
+                         Avg(CONVERT (INT, distance))     AS avg_0x8b87, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   z_test_apartment 
+                  WHERE  tag2_id = '0x8b87' 
+                  GROUP  BY tag1_id, 
+                            tag2_id, 
+                            CONVERT(SMALLDATETIME, time, 20)) a3 
+              ON a0.[yyyy-mm-dd hh:mm] = a3.[yyyy-mm-dd hh:mm] 
+                 AND a0.tag1_id = a3.tag1_id 
+       LEFT JOIN (SELECT tag1_id, 
+                         tag2_id, 
+                         Avg(CONVERT (INT, distance))     AS avg_0x8b95, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   z_test_apartment 
+                  WHERE  tag2_id = '0x8b95' 
+                  GROUP  BY tag1_id, 
+                            tag2_id, 
+                            CONVERT(SMALLDATETIME, time, 20)) a5 
+              ON a0.[yyyy-mm-dd hh:mm] = a5.[yyyy-mm-dd hh:mm] 
+                 AND a0.tag1_id = a5.tag1_id 
+       LEFT JOIN (SELECT tag1_id, 
+                         tag2_id, 
+                         Avg(CONVERT (INT, distance))     AS avg_0x920a, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   z_test_apartment 
+                  WHERE  tag2_id = '0x920a' 
+                  GROUP  BY tag1_id, 
+                            tag2_id, 
+                            CONVERT(SMALLDATETIME, time, 20)) a7 
+              ON a0.[yyyy-mm-dd hh:mm] = a7.[yyyy-mm-dd hh:mm] 
+                 AND a0.tag1_id = a7.tag1_id 
+       LEFT JOIN (SELECT tag1_id, 
+                         tag2_id, 
+                         Avg(CONVERT (INT, distance))     AS avg_0x921f, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   z_test_apartment 
+                  WHERE  tag2_id = '0x921f' 
+                  GROUP  BY tag1_id, 
+                            tag2_id, 
+                            CONVERT(SMALLDATETIME, time, 20)) a8 
+              ON a0.[yyyy-mm-dd hh:mm] = a8.[yyyy-mm-dd hh:mm] 
+                 AND a0.tag1_id = a8.tag1_id 
+       LEFT JOIN (SELECT tag1_id, 
+                         tag2_id, 
+                         Avg(CONVERT (INT, distance))     AS avg_0xcb06, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   z_test_apartment 
+                  WHERE  tag2_id = '0xcb06' 
+                  GROUP  BY tag1_id, 
+                            tag2_id, 
+                            CONVERT(SMALLDATETIME, time, 20)) a9 
+              ON a0.[yyyy-mm-dd hh:mm] = a9.[yyyy-mm-dd hh:mm] 
+                 AND a0.tag1_id = a9.tag1_id 
+       LEFT JOIN (SELECT tag1_id, 
+                         tag2_id, 
+                         Avg(CONVERT (INT, distance))     AS avg_0xce1e, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   z_test_apartment 
+                  WHERE  tag2_id = '0xce1e' 
+                  GROUP  BY tag1_id, 
+                            tag2_id, 
+                            CONVERT(SMALLDATETIME, time, 20)) a10 
+              ON a0.[yyyy-mm-dd hh:mm] = a10.[yyyy-mm-dd hh:mm] 
+                 AND a0.tag1_id = a10.tag1_id 
+       LEFT JOIN (SELECT tag1_id, 
+                         tag2_id, 
+                         Avg(CONVERT (INT, distance))     AS avg_0x5595, 
+                         CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] 
+                  FROM   z_test_apartment 
+                  WHERE  tag2_id = '0x5595' 
+                  GROUP  BY tag1_id, 
+                            tag2_id, 
+                            CONVERT(SMALLDATETIME, time, 20)) a11 
+              ON a0.[yyyy-mm-dd hh:mm] = a11.[yyyy-mm-dd hh:mm] 
+                 AND a0.tag1_id = a11.tag1_id</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\apartmentDistanceLocation\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag1_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag1_id]"
+                      length="50"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag1_id]"
+                      name="tag1_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x31c]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x31c]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x31c]"
+                      name="avg_0x31c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xcb3b]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0xcb3b]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xcb3b]"
+                      name="avg_0xcb3b"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8b87]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x8b87]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8b87]"
+                      name="avg_0x8b87"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8b95]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x8b95]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x8b95]"
+                      name="avg_0x8b95"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x920a]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x920a]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x920a]"
+                      name="avg_0x920a"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x921f]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x921f]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x921f]"
+                      name="avg_0x921f"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xcb06]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0xcb06]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xcb06]"
+                      name="avg_0xcb06"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xce1e]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0xce1e]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0xce1e]"
+                      name="avg_0xce1e"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x5595]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x5595]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_0x5595]"
+                      name="avg_0x5595"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[yyyy-mm-dd hh:mm]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[yyyy-mm-dd hh:mm]"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].Columns[yyyy-mm-dd hh:mm]"
+                      name="yyyy-mm-dd hh:mm"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag1_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag1_id" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x31c]"
+                      dataType="i4"
+                      name="avg_0x31c" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0xcb3b]"
+                      dataType="i4"
+                      name="avg_0xcb3b" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x8b87]"
+                      dataType="i4"
+                      name="avg_0x8b87" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x8b95]"
+                      dataType="i4"
+                      name="avg_0x8b95" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x920a]"
+                      dataType="i4"
+                      name="avg_0x920a" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x921f]"
+                      dataType="i4"
+                      name="avg_0x921f" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0xcb06]"
+                      dataType="i4"
+                      name="avg_0xcb06" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0xce1e]"
+                      dataType="i4"
+                      name="avg_0xce1e" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_0x5595]"
+                      dataType="i4"
+                      name="avg_0x5595" />
+                    <externalMetadataColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[yyyy-mm-dd hh:mm]"
+                      dataType="dbTimeStamp"
+                      name="yyyy-mm-dd hh:mm" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag1_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag1_id]"
+                      name="tag1_id" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x31c]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x31c]"
+                      name="avg_0x31c" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0xcb3b]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0xcb3b]"
+                      name="avg_0xcb3b" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x8b87]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x8b87]"
+                      name="avg_0x8b87" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x8b95]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x8b95]"
+                      name="avg_0x8b95" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x920a]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x920a]"
+                      name="avg_0x920a" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x921f]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x921f]"
+                      name="avg_0x921f" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0xcb06]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0xcb06]"
+                      name="avg_0xcb06" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0xce1e]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0xce1e]"
+                      name="avg_0xce1e" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x5595]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_0x5595]"
+                      name="avg_0x5595" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[yyyy-mm-dd hh:mm]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[yyyy-mm-dd hh:mm]"
+                      name="yyyy-mm-dd hh:mm" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\apartmentDistanceLocation.Paths[OLE DB Source Output]"
+              endId="Package\apartmentDistanceLocation\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\apartmentDistanceLocation\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1979,10 +2622,6 @@ FROM   (SELECT tag1_id,
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="136,42"
-          Id="Package\everyMinute"
-          TopLeft="28,66" />
-        <NodeLayout
           Size="126,42"
           Id="Package\05112020"
           TopLeft="269,73" />
@@ -1990,85 +2629,17 @@ FROM   (SELECT tag1_id,
           Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="437,78" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\everyMinute"
+          TopLeft="28,66" />
+        <NodeLayout
+          Size="207,42"
+          Id="Package\apartmentDistanceLocation"
+          TopLeft="93,182" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\everyMinute">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\everyMinute\OLE DB Source"
-          TopLeft="204,160" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\everyMinute\OLE DB Destination"
-          TopLeft="458,280" />
-        <EdgeLayout
-          Id="Package\everyMinute.Paths[OLE DB Source Output]"
-          TopLeft="279,202">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="264.5,78"
-              Start="0,0"
-              End="264.5,70.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35"
-                    Point2="0,39"
-                    Point3="4,39" />
-                  <mssgle:LineSegment
-                    End="260.5,39" />
-                  <mssgle:CubicBezierSegment
-                    Point1="260.5,39"
-                    Point2="264.5,39"
-                    Point3="264.5,43" />
-                  <mssgle:LineSegment
-                    End="264.5,70.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\everyMinute\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\everyMinute\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\05112020">
     <LayoutInfo>
@@ -2120,14 +2691,6 @@ FROM   (SELECT tag1_id,
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\05112020\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\05112020\OLE DB Destination">
     <Properties>
       <Property>
@@ -2137,6 +2700,14 @@ FROM   (SELECT tag1_id,
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\05112020\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -2191,6 +2762,19 @@ FROM   (SELECT tag1_id,
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
@@ -2198,8 +2782,142 @@ FROM   (SELECT tag1_id,
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\everyMinute">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\everyMinute\OLE DB Source"
+          TopLeft="204,160" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\everyMinute\OLE DB Destination"
+          TopLeft="458,280" />
+        <EdgeLayout
+          Id="Package\everyMinute.Paths[OLE DB Source Output]"
+          TopLeft="279,202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="264.5,78"
+              Start="0,0"
+              End="264.5,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35"
+                    Point2="0,39"
+                    Point3="4,39" />
+                  <mssgle:LineSegment
+                    End="260.5,39" />
+                  <mssgle:CubicBezierSegment
+                    Point1="260.5,39"
+                    Point2="264.5,39"
+                    Point3="264.5,43" />
+                  <mssgle:LineSegment
+                    End="264.5,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\everyMinute\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\everyMinute\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\apartmentDistanceLocation">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\apartmentDistanceLocation\OLE DB Source"
+          TopLeft="213,30" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\apartmentDistanceLocation\OLE DB Destination"
+          TopLeft="543,181" />
+        <EdgeLayout
+          Id="Package\apartmentDistanceLocation.Paths[OLE DB Source Output]"
+          TopLeft="288,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="340.5,109"
+              Start="0,0"
+              End="340.5,101.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,50.5"
+                    Point2="0,54.5"
+                    Point3="4,54.5" />
+                  <mssgle:LineSegment
+                    End="336.5,54.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="336.5,54.5"
+                    Point2="340.5,54.5"
+                    Point3="340.5,58.5" />
+                  <mssgle:LineSegment
+                    End="340.5,101.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\apartmentDistanceLocation\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\apartmentDistanceLocation\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
