@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="csvToSql"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{29CC741D-FD1C-4E6E-95BD-6A70EB5D77FE}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{8398A69F-9CBA-47B9-B7DC-EE435C3AB940}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -109,6 +109,116 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F675BCE4-2DF1-4757-A2B9-1A4240398B38}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Rainers\Desktop\vpp_bkus.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="_id"
+              DTS:DTSID="{BF544499-26F2-4E86-B030-291D6A9DED94}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="timestamp"
+              DTS:DTSID="{D6CA2A68-0E76-43AC-9252-9FFC363C1DE4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tag1_id"
+              DTS:DTSID="{5093AFAE-81D4-41DE-9129-F4B35C1797B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="tag2_id"
+              DTS:DTSID="{40F237F2-F52F-4AA0-9165-CA738FFAF5D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="distance"
+              DTS:DTSID="{641D3267-8778-46EC-B4F6-52D49491C242}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="quality"
+              DTS:DTSID="{38F47047-5150-4F32-B861-8AEA48EB2725}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{CD078756-C55B-4945-AA42-42848A0B36FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="counter"
+              DTS:DTSID="{8A01E5EE-6F8F-4D6B-AC81-24B26A0DE60F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="created"
+              DTS:DTSID="{E10530A4-9072-40E1-BBB4-4900D018A614}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="_class"
+              DTS:DTSID="{9B06B82F-A75F-452E-866A-8F5B3BE13909}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
@@ -139,12 +249,12 @@
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[_id]"
+                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[timestamp]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="_id"
-                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[_id]" />
+                      cachedName="timestamp"
+                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[timestamp]" />
                     <inputColumn
                       refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[tag1_id]"
                       cachedCodepage="1252"
@@ -167,26 +277,19 @@
                       cachedName="distance"
                       lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[distance]" />
                     <inputColumn
-                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[time]"
+                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[quality]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="time"
-                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[time]" />
+                      cachedName="quality"
+                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[quality]" />
                     <inputColumn
-                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[test_name]"
+                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
-                      cachedName="test_name"
-                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[test_name]" />
-                    <inputColumn
-                      refId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input].Columns[counter]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="counter"
-                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[counter]" />
+                      cachedName="name"
+                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[name]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -199,20 +302,20 @@
                   synchronousInputId="Package\Csv faila ielāde\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of _id]"
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of timestamp]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="50"
-                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of _id]"
-                      name="Copy of _id"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of timestamp]"
+                      name="Copy of timestamp"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[_id]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[timestamp]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -283,20 +386,20 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of time]"
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of quality]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="50"
-                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of time]"
-                      name="Copy of time"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of quality]"
+                      name="Copy of quality"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[time]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[quality]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -304,41 +407,20 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of test_name]"
+                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of name]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="50"
-                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of test_name]"
-                      name="Copy of test_name"
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of name]"
+                      name="Copy of name"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[test_name]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of counter]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of counter]"
-                      name="Copy of counter"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[counter]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[name]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -394,8 +476,8 @@
               <connections>
                 <connection
                   refId="Package\Csv faila ielāde\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -413,6 +495,28 @@
                       length="50"
                       lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[_id]"
                       name="_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[timestamp]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[timestamp]"
+                      name="timestamp"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -492,15 +596,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[time]"
+                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[quality]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[time]"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[quality]"
                       length="50"
-                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[time]"
-                      name="time"
+                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[quality]"
+                      name="quality"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -514,15 +618,15 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[test_name]"
+                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[test_name]"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[name]"
                       length="50"
-                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[test_name]"
-                      name="test_name"
+                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[name]"
+                      name="name"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -557,6 +661,50 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[created]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[created]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[created]"
+                      name="created"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[_class]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[_class]"
+                      length="50"
+                      lineageId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].Columns[_class]"
+                      name="_class"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -566,6 +714,12 @@
                       dataType="str"
                       length="50"
                       name="_id" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[timestamp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="timestamp" />
                     <externalMetadataColumn
                       refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[tag1_id]"
                       codePage="1252"
@@ -585,23 +739,35 @@
                       length="50"
                       name="distance" />
                     <externalMetadataColumn
-                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[time]"
+                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[quality]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="time" />
+                      name="quality" />
                     <externalMetadataColumn
-                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[test_name]"
+                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      name="test_name" />
+                      name="name" />
                     <externalMetadataColumn
                       refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[counter]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="counter" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[created]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="created" />
+                    <externalMetadataColumn
+                      refId="Package\Csv faila ielāde\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[_class]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="_class" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -649,7 +815,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[t_apartments]</property>
+                  name="OpenRowset">[dbo].[s_distance]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -706,13 +872,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of _id]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of _id"
-                      externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[_id]"
-                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of _id]" />
-                    <inputColumn
                       refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of tag1_id]"
                       cachedDataType="wstr"
                       cachedLength="50"
@@ -734,26 +893,19 @@
                       externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[distance]"
                       lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of distance]" />
                     <inputColumn
-                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of time]"
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of timestamp]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="Copy of time"
+                      cachedName="Copy of timestamp"
                       externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[time]"
-                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of time]" />
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of timestamp]" />
                     <inputColumn
-                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of test_name]"
+                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of name]"
                       cachedDataType="wstr"
                       cachedLength="50"
-                      cachedName="Copy of test_name"
+                      cachedName="Copy of name"
                       externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[test_name]"
-                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of test_name]" />
-                    <inputColumn
-                      refId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of counter]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of counter"
-                      externalMetadataColumnId="Package\Csv faila ielāde\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[counter]"
-                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of counter]" />
+                      lineageId="Package\Csv faila ielāde\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of name]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -864,41 +1016,25 @@
         <NodeLayout
           Size="151,42"
           Id="Package\Csv faila ielāde\Flat File Source"
-          TopLeft="141.5,101.5" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Csv faila ielāde\OLE DB Destination"
-          TopLeft="699,285" />
+          TopLeft="277,185" />
         <NodeLayout
           Size="156,42"
           Id="Package\Csv faila ielāde\Data Conversion"
-          TopLeft="379,183" />
+          TopLeft="594,191" />
         <EdgeLayout
           Id="Package\Csv faila ielāde.Paths[Flat File Source Output]"
-          TopLeft="217,143.5">
+          TopLeft="428,209">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="240,39.5"
+              EndConnector="166,0"
               Start="0,0"
-              End="240,32">
+              End="158.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.75"
-                    Point2="0,19.75"
-                    Point3="4,19.75" />
-                  <mssgle:LineSegment
-                    End="236,19.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="236,19.75"
-                    Point2="240,19.75"
-                    Point3="240,23.75" />
-                  <mssgle:LineSegment
-                    End="240,32" />
+                    End="158.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -907,32 +1043,36 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Csv faila ielāde\OLE DB Destination"
+          TopLeft="545,383" />
         <EdgeLayout
           Id="Package\Csv faila ielāde.Paths[Data Conversion Output]"
-          TopLeft="457,225">
+          TopLeft="672,233">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="327.5,60"
+              EndConnector="-41.5,150"
               Start="0,0"
-              End="327.5,52.5">
+              End="-41.5,142.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26" />
+                    End="0,71" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26"
-                    Point2="0,30"
-                    Point3="4,30" />
+                    Point1="0,71"
+                    Point2="0,75"
+                    Point3="-4,75" />
                   <mssgle:LineSegment
-                    End="323.5,30" />
+                    End="-37.5,75" />
                   <mssgle:CubicBezierSegment
-                    Point1="323.5,30"
-                    Point2="327.5,30"
-                    Point3="327.5,34" />
+                    Point1="-37.5,75"
+                    Point2="-41.5,75"
+                    Point3="-41.5,79" />
                   <mssgle:LineSegment
-                    End="327.5,52.5" />
+                    End="-41.5,142.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

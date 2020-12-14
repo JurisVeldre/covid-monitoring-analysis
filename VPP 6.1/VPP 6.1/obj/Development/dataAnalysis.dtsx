@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="dataAnalysis"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{05FF37B3-8778-4FB7-80A1-BC1807AF3D37}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{643351C2-00FB-4AD0-91F1-4F66B4F8F433}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2512,6 +2512,542 @@ group by tag_id , CONVERT(SMALLDATETIME, time, 20)) a5 on a6.[YYYY-MM-DD HH:MM]=
               endId="Package\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Distance Test"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5B4FC9C5-7A6B-4B66-AD14-B77DCD972112}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Distance Test"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Distance Test\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[t_distance_test_bkus]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Distance Test\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[tag1_id]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="tag1_id"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag1_id]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag1_id]" />
+                    <inputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_ce1e]"
+                      cachedDataType="i4"
+                      cachedName="avg_ce1e"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_ce1e]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_ce1e]" />
+                    <inputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_159b]"
+                      cachedDataType="i4"
+                      cachedName="avg_159b"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_159b]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_159b]" />
+                    <inputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_d68b]"
+                      cachedDataType="i4"
+                      cachedName="avg_d68b"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_d68b]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_d68b]" />
+                    <inputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_c32c]"
+                      cachedDataType="i4"
+                      cachedName="avg_c32c"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_c32c]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_c32c]" />
+                    <inputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_1a04]"
+                      cachedDataType="i4"
+                      cachedName="avg_1a04"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_1a04]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_1a04]" />
+                    <inputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_4106]"
+                      cachedDataType="i4"
+                      cachedName="avg_4106"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_4106]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_4106]" />
+                    <inputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_489b]"
+                      cachedDataType="i4"
+                      cachedName="avg_489b"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_489b]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_489b]" />
+                    <inputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[avg_9d00]"
+                      cachedDataType="i4"
+                      cachedName="avg_9d00"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_9d00]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_9d00]" />
+                    <inputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[YYYY-MM-DD HH:MM]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="YYYY-MM-DD HH:MM"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[tag1_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag1_id" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_ce1e]"
+                      dataType="i4"
+                      name="avg_ce1e" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_159b]"
+                      dataType="i4"
+                      name="avg_159b" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_d68b]"
+                      dataType="i4"
+                      name="avg_d68b" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_c32c]"
+                      dataType="i4"
+                      name="avg_c32c" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_1a04]"
+                      dataType="i4"
+                      name="avg_1a04" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_4106]"
+                      dataType="i4"
+                      name="avg_4106" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_489b]"
+                      dataType="i4"
+                      name="avg_489b" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_9d00]"
+                      dataType="i4"
+                      name="avg_9d00" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      name="YYYY-MM-DD HH:MM" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Distance Test\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Distance Test\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (
+select a0.tag1_id , a1.avg_ce1e , a2.avg_159b , a3.avg_d68b  ,a5.avg_c32c,a7.avg_1a04,a8.avg_4106,a9.avg_489b,a10.avg_9d00, a0.[YYYY-MM-DD HH:MM] from 
+(select tag1_id,  CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM] from s_distance group by tag1_id , CONVERT(SMALLDATETIME, time, 20)) a0
+left join
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_ce1e, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from s_distance
+where tag2_id = 'ce1e'
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a1 on a1.[YYYY-MM-DD HH:MM]=a0.[YYYY-MM-DD HH:MM] and a0.tag1_id = a1.tag1_id
+left join 
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_159b, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from s_distance
+where tag2_id = '159b' 
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a2 on a0.[YYYY-MM-DD HH:MM] = a2.[YYYY-MM-DD HH:MM] and a0.tag1_id = a2.tag1_id
+left join
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_d68b, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from s_distance
+where tag2_id = 'd68b' 
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a3 on a0.[YYYY-MM-DD HH:MM] = a3.[YYYY-MM-DD HH:MM] and a0.tag1_id = a3.tag1_id 
+left join
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_c32c, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from s_distance
+where tag2_id = 'c32c' 
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a5 on a0.[YYYY-MM-DD HH:MM] = a5.[YYYY-MM-DD HH:MM] and a0.tag1_id = a5.tag1_id
+left join
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_1a04, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from s_distance
+where tag2_id = '1a04' 
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a7 on a0.[YYYY-MM-DD HH:MM] = a7.[YYYY-MM-DD HH:MM] and a0.tag1_id = a7.tag1_id
+left join
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_4106, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from s_distance
+where tag2_id = '4106' 
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a8 on a0.[YYYY-MM-DD HH:MM] = a8.[YYYY-MM-DD HH:MM] and a0.tag1_id = a8.tag1_id
+left join
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_489b, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from s_distance
+where tag2_id = '489b' 
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a9 on a0.[YYYY-MM-DD HH:MM] = a9.[YYYY-MM-DD HH:MM] and a0.tag1_id = a9.tag1_id
+left join
+(select tag1_id , tag2_id , Avg(CONVERT (INT, distance))  AS avg_9d00, CONVERT(SMALLDATETIME, time, 20) AS [YYYY-MM-DD HH:MM]  from s_distance
+where tag2_id = '9d00' 
+group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, time, 20)) a10 on a0.[YYYY-MM-DD HH:MM] = a10.[YYYY-MM-DD HH:MM] and a0.tag1_id = a10.tag1_id
+) a where tag1_id in ( '858B' ,  '9CA5') and [YYYY-MM-DD HH:MM] &gt; '2020-12-07 00:00' and [YYYY-MM-DD HH:MM] &lt; '2020-12-07 16:50'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Distance Test\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-JBV9DCA.VPP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag1_id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag1_id]"
+                      length="50"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[tag1_id]"
+                      name="tag1_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_ce1e]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_ce1e]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_ce1e]"
+                      name="avg_ce1e"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_159b]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_159b]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_159b]"
+                      name="avg_159b"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_d68b]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_d68b]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_d68b]"
+                      name="avg_d68b"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_c32c]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_c32c]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_c32c]"
+                      name="avg_c32c"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_1a04]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_1a04]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_1a04]"
+                      name="avg_1a04"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_4106]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_4106]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_4106]"
+                      name="avg_4106"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_489b]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_489b]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_489b]"
+                      name="avg_489b"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_9d00]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_9d00]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_9d00]"
+                      name="avg_9d00"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].Columns[YYYY-MM-DD HH:MM]"
+                      name="YYYY-MM-DD HH:MM"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tag1_id]"
+                      dataType="wstr"
+                      length="50"
+                      name="tag1_id" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_ce1e]"
+                      dataType="i4"
+                      name="avg_ce1e" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_159b]"
+                      dataType="i4"
+                      name="avg_159b" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_d68b]"
+                      dataType="i4"
+                      name="avg_d68b" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_c32c]"
+                      dataType="i4"
+                      name="avg_c32c" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_1a04]"
+                      dataType="i4"
+                      name="avg_1a04" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_4106]"
+                      dataType="i4"
+                      name="avg_4106" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_489b]"
+                      dataType="i4"
+                      name="avg_489b" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_9d00]"
+                      dataType="i4"
+                      name="avg_9d00" />
+                    <externalMetadataColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      name="YYYY-MM-DD HH:MM" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag1_id]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[tag1_id]"
+                      name="tag1_id" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_ce1e]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_ce1e]"
+                      name="avg_ce1e" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_159b]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_159b]"
+                      name="avg_159b" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_d68b]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_d68b]"
+                      name="avg_d68b" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_c32c]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_c32c]"
+                      name="avg_c32c" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_1a04]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_1a04]"
+                      name="avg_1a04" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_4106]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_4106]"
+                      name="avg_4106" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_489b]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_489b]"
+                      name="avg_489b" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_9d00]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_9d00]"
+                      name="avg_9d00" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YYYY-MM-DD HH:MM]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YYYY-MM-DD HH:MM]"
+                      name="YYYY-MM-DD HH:MM" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Distance Test.Paths[OLE DB Source Output]"
+              endId="Package\Distance Test\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Distance Test\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -5959,6 +6495,48 @@ group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, timestamp, 20)) a18 on a0.[Y
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{92BC7A86-7D16-4185-A3FD-927243A8D51A}"
+      DTS:From="Package\everyMinute"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\05112020" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9730FB18-344C-4544-8B7C-8646833BDC4E}"
+      DTS:From="Package\05112020"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\apartmentDistanceLocation" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{8B583976-BD0E-4863-BEC8-660AC47D0E75}"
+      DTS:From="Package\apartmentDistanceLocation"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\LocationTestDay" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{3F95084F-95B8-40E1-904A-2F2D3AF88FFF}"
+      DTS:From="Package\LocationTestDay"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\test_bkus1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{A818B745-E7A8-45C0-89CD-2E219E5999F9}"
+      DTS:From="Package\test_bkus1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\test_bkus2" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -5970,39 +6548,201 @@ group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, timestamp, 20)) a18 on a0.[Y
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="126,42"
           Id="Package\05112020"
-          TopLeft="268,72" />
+          TopLeft="242,41" />
         <NodeLayout
           Size="207,42"
           Id="Package\apartmentDistanceLocation"
-          TopLeft="93,182" />
+          TopLeft="61,152" />
         <NodeLayout
           Size="151,42"
           Id="Package\Data Flow Task"
-          TopLeft="437,78" />
-        <NodeLayout
-          Size="136,42"
-          Id="Package\everyMinute"
-          TopLeft="28,66" />
-        <NodeLayout
-          Size="157,42"
-          Id="Package\LocationTestDay"
-          TopLeft="461,189" />
+          TopLeft="69,304" />
         <NodeLayout
           Size="160,42"
           Id="Package\Data Flow Task 1"
-          TopLeft="262,305" />
+          TopLeft="70,380" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\everyMinute"
+          TopLeft="27,45" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\LocationTestDay"
+          TopLeft="267,226" />
         <NodeLayout
           Size="130,42"
           Id="Package\test_bkus1"
-          TopLeft="787,125" />
+          TopLeft="348,124" />
         <NodeLayout
           Size="130,42"
           Id="Package\test_bkus2"
-          TopLeft="819,240" />
+          TopLeft="530,45" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="163,64">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79,0"
+              Start="0,0"
+              End="71.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="305,83">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-140.5,69"
+              Start="0,0"
+              End="-140.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5"
+                    Point2="0,34.5"
+                    Point3="-4,34.5" />
+                  <mssgle:LineSegment
+                    End="-136.5,34.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-136.5,34.5"
+                    Point2="-140.5,34.5"
+                    Point3="-140.5,38.5" />
+                  <mssgle:LineSegment
+                    End="-140.5,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="164.5,194">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="156.166666666667,32"
+              Start="0,0"
+              End="156.166666666667,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0063051702396" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.0063051702396"
+                    Point2="0,19.0063051702396"
+                    Point3="4,19.0063051702396" />
+                  <mssgle:LineSegment
+                    End="152.166666666667,19.0063051702396" />
+                  <mssgle:CubicBezierSegment
+                    Point1="152.166666666667,19.0063051702396"
+                    Point2="156.166666666667,19.0063051702396"
+                    Point3="156.166666666667,23.0063051702396" />
+                  <mssgle:LineSegment
+                    End="156.166666666667,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="370.333333333333,226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="42.6666666666667,-60"
+              Start="0,0"
+              End="42.6666666666667,-52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-20.3631778058008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-20.3631778058008"
+                    Point2="0,-24.3631778058008"
+                    Point3="4,-24.3631778058008" />
+                  <mssgle:LineSegment
+                    End="38.6666666666667,-24.3631778058008" />
+                  <mssgle:CubicBezierSegment
+                    Point1="38.6666666666667,-24.3631778058008"
+                    Point2="42.6666666666667,-24.3631778058008"
+                    Point3="42.6666666666667,-28.3631778058008" />
+                  <mssgle:LineSegment
+                    End="42.6666666666667,-52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="413,124">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="182,-37"
+              Start="0,0"
+              End="182,-29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-14.5"
+                    Point2="0,-18.5"
+                    Point3="4,-18.5" />
+                  <mssgle:LineSegment
+                    End="178,-18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="178,-18.5"
+                    Point2="182,-18.5"
+                    Point3="182,-22.5" />
+                  <mssgle:LineSegment
+                    End="182,-29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Distance Test"
+          TopLeft="521,237" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -6226,6 +6966,79 @@ group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, timestamp, 20)) a18 on a0.[Y
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task 1\OLE DB Destination"
+          TopLeft="610,372" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task 1\OLE DB Source"
+          TopLeft="302,192" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+          TopLeft="377,234">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="318.5,138"
+              Start="0,0"
+              End="318.5,130.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,65"
+                    Point2="0,69"
+                    Point3="4,69" />
+                  <mssgle:LineSegment
+                    End="314.5,69" />
+                  <mssgle:CubicBezierSegment
+                    Point1="314.5,69"
+                    Point2="318.5,69"
+                    Point3="318.5,73" />
+                  <mssgle:LineSegment
+                    End="318.5,130.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\everyMinute">
     <LayoutInfo>
       <GraphLayout
@@ -6307,7 +7120,7 @@ group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, timestamp, 20)) a18 on a0.[Y
     design-time-name="Package\LocationTestDay">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150,42"
           Id="Package\LocationTestDay\OLE DB Source"
@@ -6347,9 +7160,7 @@ group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, timestamp, 20)) a18 on a0.[Y
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6377,81 +7188,10 @@ group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, timestamp, 20)) a18 on a0.[Y
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Data Flow Task 1">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Data Flow Task 1\OLE DB Source"
-          TopLeft="302,192" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task 1\OLE DB Destination"
-          TopLeft="610,372" />
-        <EdgeLayout
-          Id="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
-          TopLeft="377,234">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="318.5,138"
-              Start="0,0"
-              End="318.5,130.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,65" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,65"
-                    Point2="0,69"
-                    Point3="4,69" />
-                  <mssgle:LineSegment
-                    End="314.5,69" />
-                  <mssgle:CubicBezierSegment
-                    Point1="314.5,69"
-                    Point2="318.5,69"
-                    Point3="318.5,73" />
-                  <mssgle:LineSegment
-                    End="318.5,130.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task 1\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task 1\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\test_bkus1">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\test_bkus1\OLE DB Source"
@@ -6491,20 +7231,14 @@ group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, timestamp, 20)) a18 on a0.[Y
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\test_bkus1\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\test_bkus1\OLE DB Destination">
     <Properties>
@@ -6518,11 +7252,19 @@ group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, timestamp, 20)) a18 on a0.[Y
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\test_bkus1\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\test_bkus2">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150,42"
           Id="Package\test_bkus2\OLE DB Source"
@@ -6562,12 +7304,27 @@ group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, timestamp, 20)) a18 on a0.[Y
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\test_bkus2\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\test_bkus2\OLE DB Source">
     <Properties>
@@ -6576,8 +7333,66 @@ group by tag1_id , tag2_id , CONVERT(SMALLDATETIME, timestamp, 20)) a18 on a0.[Y
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Distance Test">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Distance Test\OLE DB Source"
+          TopLeft="171,198" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Distance Test\OLE DB Destination"
+          TopLeft="633,275" />
+        <EdgeLayout
+          Id="Package\Distance Test.Paths[OLE DB Source Output]"
+          TopLeft="246,240">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="472.5,35"
+              Start="0,0"
+              End="472.5,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.5"
+                    Point2="0,17.5"
+                    Point3="4,17.5" />
+                  <mssgle:LineSegment
+                    End="468.5,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="468.5,17.5"
+                    Point2="472.5,17.5"
+                    Point3="472.5,21.5" />
+                  <mssgle:LineSegment
+                    End="472.5,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\test_bkus2\OLE DB Destination">
+    design-time-name="Package\Distance Test\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Distance Test\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
