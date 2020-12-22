@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>VPP 6.1</Name>
-    <LastWriteTime>2020-12-12T12:59:17.5490044Z</LastWriteTime>
+    <LastWriteTime>2020-12-22T08:45:49.7972313Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -14,11 +14,6 @@
     <ProjectBuildItemInfo>
       <Name>dataAnalysis.dtsx</Name>
       <LastWriteTime>2020-12-14T10:45:39.4406977Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
-      <Name>csvToSql 1.dtsx</Name>
-      <LastWriteTime>2020-11-05T23:17:55.9838982Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -39,6 +34,11 @@
     <ProjectBuildItemInfo>
       <Name>csvToSql 4.dtsx</Name>
       <LastWriteTime>2020-11-27T09:44:10.0299524Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Eliko locat contacts.dtsx</Name>
+      <LastWriteTime>2020-12-22T08:45:49.6862312Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
