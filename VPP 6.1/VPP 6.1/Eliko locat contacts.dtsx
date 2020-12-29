@@ -11,8 +11,8 @@
   DTS:LocaleID="2057"
   DTS:ObjectName="Eliko locat contacts"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{ABB8CC12-5AC4-45CC-A04B-DAFDA982D802}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{A868E660-6410-4C90-B42C-B9C4E871F985}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1620,7 +1620,7 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{BC1F33C6-8FA8-40B5-BEBC-FDD1FD4D4687}"
-          SQLTask:SqlStatementSource="truncate table t_apartments_locat;&#xA;truncate table s_eliko_locat;&#xA;truncate table s_eliko_unpivoted;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="truncate table t_apartments_locat;&#xA;truncate table s_eliko_locat;&#xA;truncate table s_eliko_unpivoted;&#xA;truncate table s_eliko_count;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -6005,7 +6005,7 @@ SQRT(POWER(avg_x0880 - avg_x07B4 , 2) + POWER(avg_y0880 - avg_y07B4 , 2)) as [08
 SQRT(POWER(avg_x086D - avg_x07B4 , 2) + POWER(avg_y086D - avg_y07B4 , 2)) as [086D to 07B4],
 SQRT(POWER(avg_x086D - avg_x0880 , 2) + POWER(avg_y086D - avg_y0880 , 2)) as [086D to 0880]
 
-from s_eliko_locat where test_name = 'LNO_stage' order by [yyyy-mm-dd hh:mm]</property>
+from s_eliko_locat where test_name = 'LNO_stage' and [yyyy-mm-dd hh:mm] &gt; '2020-12-12 12:32:00.000' order by [yyyy-mm-dd hh:mm]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -16203,6 +16203,10 @@ from s_eliko_locat where test_name = 'LNO_stage' order by [yyyy-mm-dd hh:mm]</pr
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="98,42"
+          Id="Package\Bins"
+          TopLeft="428,333" />
+        <NodeLayout
           Size="149,42"
           Id="Package\Csv faila ielāde"
           TopLeft="154,128" />
@@ -16210,6 +16214,14 @@ from s_eliko_locat where test_name = 'LNO_stage' order by [yyyy-mm-dd hh:mm]</pr
           Size="163,42"
           Id="Package\Execute SQL Task"
           TopLeft="14,41" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\StarpTabula"
+          TopLeft="371,185" />
+        <NodeLayout
+          Size="115,42"
+          Id="Package\Unpivot"
+          TopLeft="198,291" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="95.5,83">
@@ -16244,10 +16256,6 @@ from s_eliko_locat where test_name = 'LNO_stage' order by [yyyy-mm-dd hh:mm]</pr
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="136,42"
-          Id="Package\StarpTabula"
-          TopLeft="371,185" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="303,149">
@@ -16282,10 +16290,6 @@ from s_eliko_locat where test_name = 'LNO_stage' order by [yyyy-mm-dd hh:mm]</pr
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="115,42"
-          Id="Package\Unpivot"
-          TopLeft="198,291" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="439,227">
@@ -16320,10 +16324,6 @@ from s_eliko_locat where test_name = 'LNO_stage' order by [yyyy-mm-dd hh:mm]</pr
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Bins"
-          TopLeft="428,333" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="313,312">
@@ -16361,6 +16361,77 @@ from s_eliko_locat where test_name = 'LNO_stage' order by [yyyy-mm-dd hh:mm]</pr
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Bins">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Bins\OLE DB Source"
+          TopLeft="178,201" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Bins\OLE DB Destination"
+          TopLeft="419,322" />
+        <EdgeLayout
+          Id="Package\Bins.Paths[OLE DB Source Output]"
+          TopLeft="253,243">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="251.5,79"
+              Start="0,0"
+              End="251.5,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.5"
+                    Point2="0,39.5"
+                    Point3="4,39.5" />
+                  <mssgle:LineSegment
+                    End="247.5,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="247.5,39.5"
+                    Point2="251.5,39.5"
+                    Point3="251.5,43.5" />
+                  <mssgle:LineSegment
+                    End="251.5,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Bins\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Bins\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Csv faila ielāde">
     <LayoutInfo>
@@ -16589,14 +16660,6 @@ from s_eliko_locat where test_name = 'LNO_stage' order by [yyyy-mm-dd hh:mm]</pr
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\StarpTabula\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\StarpTabula\OLE DB Destination">
     <Properties>
       <Property>
@@ -16609,53 +16672,27 @@ from s_eliko_locat where test_name = 'LNO_stage' order by [yyyy-mm-dd hh:mm]</pr
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\StarpTabula\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Unpivot">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Unpivot\OLE DB Source"
-          TopLeft="214,191" />
-        <NodeLayout
           Size="115,42"
           Id="Package\Unpivot\Unpivot"
           TopLeft="441,261" />
-        <EdgeLayout
-          Id="Package\Unpivot.Paths[OLE DB Source Output]"
-          TopLeft="289,233">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="209.5,28"
-              Start="0,0"
-              End="209.5,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,10" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,10"
-                    Point2="0,14"
-                    Point3="4,14" />
-                  <mssgle:LineSegment
-                    End="205.5,14" />
-                  <mssgle:CubicBezierSegment
-                    Point1="205.5,14"
-                    Point2="209.5,14"
-                    Point3="209.5,18" />
-                  <mssgle:LineSegment
-                    End="209.5,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Unpivot\OLE DB Source"
+          TopLeft="214,191" />
         <NodeLayout
           Size="171,42"
           Id="Package\Unpivot\OLE DB Destination"
@@ -16694,6 +16731,40 @@ from s_eliko_locat where test_name = 'LNO_stage' order by [yyyy-mm-dd hh:mm]</pr
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Unpivot.Paths[OLE DB Source Output]"
+          TopLeft="289,233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="209.5,28"
+              Start="0,0"
+              End="209.5,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="205.5,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="205.5,14"
+                    Point2="209.5,14"
+                    Point3="209.5,18" />
+                  <mssgle:LineSegment
+                    End="209.5,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -16707,77 +16778,6 @@ from s_eliko_locat where test_name = 'LNO_stage' order by [yyyy-mm-dd hh:mm]</pr
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Unpivot\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Bins">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Bins\OLE DB Source"
-          TopLeft="178,201" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Bins\OLE DB Destination"
-          TopLeft="419,322" />
-        <EdgeLayout
-          Id="Package\Bins.Paths[OLE DB Source Output]"
-          TopLeft="253,243">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="251.5,79"
-              Start="0,0"
-              End="251.5,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.5"
-                    Point2="0,39.5"
-                    Point3="4,39.5" />
-                  <mssgle:LineSegment
-                    End="247.5,39.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="247.5,39.5"
-                    Point2="251.5,39.5"
-                    Point3="251.5,43.5" />
-                  <mssgle:LineSegment
-                    End="251.5,71.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Bins\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Bins\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
